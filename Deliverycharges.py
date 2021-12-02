@@ -24,6 +24,6 @@ class DeliveryCharges:
 SpecialDay=input("SpecialDay:")
 Items=input("Items:").split(',')
 Peakhour=input("Peak hour:")
-Nightorder=input("Night order:")
+Nightorder=input("Night Order:")
 ob=DeliveryCharges()
 print("Total Bill:",ob.Totalbill(SpecialDay,Items,Peakhour,Nightorder))
