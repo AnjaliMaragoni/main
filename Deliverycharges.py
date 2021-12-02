@@ -1,29 +1,29 @@
 class DeliveryCharges:
-    def Charges(self,SpecialDay,Items,Peakhour,NightOrder):
-        totalbill=0
+    def Totalbill(self,SpecialDay,Items,peakhour,Nightorder):
+        sum=0
         for i in Items:
             if(i=="Pizza"):
-                totalbill+=150
+                sum+=150
             if(i=="Burger"):
-                totalbill+=100
+                sum+=100
             if(i=="Coke"):
-                totalbill+=50
+                sum+=50
             if(i=="Brownies"):
-                totalbill+=60
-        gst=(totalbill*5)/100
-        totalbill+=gst
-        if(Peakhour=="Yes"):
-            totalbill+=30
+                sum+=60
+        gst=(sum*5)/100
+        sum=sum+gst
         if(SpecialDay=="Yes"):
-            totalbill+=50
-        if(NightOrder=="Yes"):
-            totalbill+=20
-        if(Peakhour=="No" and SpecialDay=="No" and NightOrder=="No"):
-            totalbill+=20
-        return totalbill
-SpecialDay=input()
-Items=input().split(',')
-Peakhour=input()
-NightOrder=input()
+            sum+=50
+        if(Peakhour=="Yes"):
+            sum+=30
+        if(Nightorder=="Yes"):
+            sum+=20
+        if(SpecialDay=="No" and Peakhour=="No" and Nightorder=="No"):
+            sum+=20
+        return sum
+SpecialDay=input("SpecialDay:")
+Items=input("Items:").split(',')
+Peakhour=input("Peak hour:")
+Nightorder=input("Night order:")
 ob=DeliveryCharges()
-print(ob.Charges(SpecialDay,Items,Peakhour,NightOrder))
+print("Total Bill:",ob.Totalbill(SpecialDay,Items,Peakhour,Nightorder))
